@@ -1,188 +1,477 @@
 /* =========================================
-   SEARCH RESULTS & HISTORICAL ENTRIES
+   FEATHER
+   A Digital Archive of Human History
    ========================================= */
 
-.results-section {
-    padding: 55px 0;
-    border-top: 1px solid rgba(128, 99, 75, 0.25);
-}
 
-.results-section[hidden] {
-    display: none;
-}
+/* ---------- HISTORICAL ARCHIVE ---------- */
 
-.results-heading {
-    text-align: center;
-    font-family: var(--heading-font);
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
-}
+const historicalArchive = [
 
-.results-description {
-    text-align: center;
-    font-family: var(--body-font);
-    font-size: 19px;
-    font-style: italic;
-    margin-bottom: 35px;
-    color: var(--coffee);
-}
+    {
+        title: "Cleopatra VII",
+        category: "Historical Figure",
+        period: "69 BCE – 30 BCE",
+        location: "Ancient Egypt",
 
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-}
+        introduction:
+            "Cleopatra VII was the final active ruler of the Ptolemaic Kingdom of Egypt. She is remembered for her political intelligence, diplomatic relationships, and efforts to preserve Egypt's independence.",
 
-.result-card,
-.full-entry {
-    background: rgba(245, 235, 221, 0.94);
-    border: 1px solid rgba(128, 99, 75, 0.3);
-    padding: 30px;
-    box-shadow: 0 7px 22px rgba(64, 49, 38, 0.08);
-}
+        overview:
+            "Born in 69 BCE, Cleopatra became queen of Egypt in 51 BCE. Her reign took place during a period of significant political tension as Rome expanded its influence across the Mediterranean.",
 
-.result-category {
-    display: block;
-    font-family: var(--interface-font);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-}
+        simplified:
+            "In simpler terms: Cleopatra ruled Egypt during a time when the Roman Republic was becoming increasingly powerful.",
 
-.result-card h4 {
-    font-family: var(--heading-font);
-    font-size: 19px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
+        curiosity:
+            "Cleopatra was a member of the Ptolemaic dynasty, a Greek-speaking royal family that ruled Egypt after the death of Alexander the Great.",
 
-.result-period,
-.result-location {
-    font-family: var(--interface-font);
-    font-size: 11px;
-    color: var(--coffee);
-    margin-bottom: 8px;
-}
+        source: "Metropolitan Museum of Art",
 
-.result-introduction {
-    font-family: var(--body-font);
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 18px 0;
-}
+        sourceUrl:
+            "https://www.metmuseum.org/essays/egypt-in-the-ptolemaic-period"
+    },
 
-.read-entry-button,
-.back-button {
-    border: 1px solid var(--coffee);
-    background: var(--walnut);
-    color: var(--parchment);
-    padding: 13px 18px;
-    font-family: var(--interface-font);
-    font-size: 9px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+    {
+        title: "The French Revolution",
+        category: "Historical Event",
+        period: "1789 – 1799",
+        location: "France",
 
-.read-entry-button:hover,
-.back-button:hover {
-    background: var(--coffee);
-}
+        introduction:
+            "The French Revolution was a period of major political and social transformation that challenged the monarchy and reshaped French society.",
 
-.read-entry-button:focus-visible,
-.back-button:focus-visible {
-    outline: 3px solid var(--gold);
-    outline-offset: 3px;
-}
+        overview:
+            "Beginning in 1789, the revolution emerged amid financial crisis, social inequality, and growing dissatisfaction with the French monarchy.",
 
-.empty-message {
-    text-align: center;
-    font-family: var(--body-font);
-    font-size: 20px;
-    padding: 30px;
-}
+        simplified:
+            "In simpler terms: Many people in France wanted a government and society that were less unequal and less controlled by the monarchy.",
 
-.back-button {
-    margin-bottom: 25px;
-}
+        curiosity:
+            "The storming of the Bastille on July 14, 1789, became one of the revolution's most recognizable symbolic events.",
 
-.full-entry {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 45px;
-}
+        source: "Library of Congress",
 
-.entry-title {
-    font-family: var(--heading-font);
-    font-size: clamp(28px, 5vw, 43px);
-    font-weight: 500;
-    margin-bottom: 15px;
-}
+        sourceUrl: "https://www.loc.gov/"
+    },
 
-.entry-metadata {
-    font-family: var(--interface-font);
-    font-size: 11px;
-    color: var(--coffee);
-    margin-bottom: 35px;
-}
+    {
+        title: "Ancient Rome",
+        category: "Civilization",
+        period: "753 BCE – 476 CE (Western Roman Empire)",
+        location: "Mediterranean Region",
 
-.full-entry h3 {
-    font-family: var(--heading-font);
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    margin: 30px 0 15px;
-}
+        introduction:
+            "Ancient Rome developed from a settlement on the Italian Peninsula into one of the most influential civilizations in world history.",
 
-.full-entry > p {
-    font-family: var(--body-font);
-    font-size: 20px;
-    line-height: 1.8;
-    margin-bottom: 18px;
-}
+        overview:
+            "Roman history is commonly divided into three major political periods: the Roman Kingdom, the Roman Republic, and the Roman Empire.",
 
-.simplified-box {
-    background: rgba(214, 195, 167, 0.45);
-    border-left: 4px solid var(--gold);
-    padding: 20px;
-    margin: 25px 0;
-    font-family: var(--body-font);
-    font-size: 19px;
-    line-height: 1.7;
-}
+        simplified:
+            "In simpler terms: Rome began as a small settlement and eventually became the center of a vast empire.",
 
-.full-entry a {
-    display: inline-block;
-    color: var(--coffee);
-    font-family: var(--interface-font);
-    font-size: 13px;
-    font-weight: 600;
-    margin: 10px 0;
-}
+        curiosity:
+            "The Romans constructed extensive road networks, aqueducts, public baths, amphitheaters, and other structures.",
 
-.full-entry a:hover {
-    color: var(--walnut);
-}
+        source: "World History Encyclopedia",
 
-.full-entry .source-note {
-    font-family: var(--interface-font);
-    font-size: 11px;
-    line-height: 1.7;
-    color: var(--coffee);
-    margin-top: 12px;
-}
+        sourceUrl: "https://www.worldhistory.org/Rome/"
+    },
 
-@media (max-width: 700px) {
-    .results-grid {
-        grid-template-columns: 1fr;
+    {
+        title: "The Black Death",
+        category: "Historical Event",
+        period: "Approximately 1346 – 1353",
+        location: "Europe, Asia, and North Africa",
+
+        introduction:
+            "The Black Death was a devastating pandemic that spread across large parts of Eurasia and North Africa during the fourteenth century.",
+
+        overview:
+            "The pandemic was caused by the bacterium Yersinia pestis. It profoundly affected population levels, economies, religious life, and social structures.",
+
+        simplified:
+            "In simpler terms: The Black Death was a major disease outbreak that changed societies across several continents.",
+
+        curiosity:
+            "The pandemic's effects varied between regions, and historians continue to investigate how communities responded to it.",
+
+        source: "World Health Organization",
+
+        sourceUrl: "https://www.who.int/"
+    },
+
+    {
+        title: "The Silk Road",
+        category: "Historical Network",
+        period: "Ancient era – early modern period",
+        location: "Asia, Europe, and North Africa",
+
+        introduction:
+            "The Silk Road refers to a network of trade routes connecting communities across Asia, Europe, and parts of North Africa.",
+
+        overview:
+            "Merchants, travelers, diplomats, and religious communities used these routes to exchange goods, knowledge, technologies, and cultural traditions.",
+
+        simplified:
+            "In simpler terms: The Silk Road was not one road, but a collection of connected trade routes that helped different societies interact.",
+
+        curiosity:
+            "Ideas, artistic traditions, technologies, and religious beliefs traveled alongside commercial goods.",
+
+        source: "UNESCO",
+
+        sourceUrl: "https://en.unesco.org/silkroad/"
     }
 
-    .full-entry {
-        padding: 25px;
+];
+
+
+/* ---------- SEARCH ELEMENTS ---------- */
+
+const searchForm = document.getElementById("search-form");
+
+const searchInput = document.getElementById("history-search");
+
+
+/* ---------- RESULTS AREA ---------- */
+
+const resultsSection = document.createElement("section");
+
+resultsSection.id = "search-results";
+
+resultsSection.className = "results-section";
+
+resultsSection.setAttribute("aria-live", "polite");
+
+resultsSection.hidden = true;
+
+document.querySelector("main").appendChild(resultsSection);
+
+
+/* ---------- SEARCH FUNCTION ---------- */
+
+function searchHistory(query) {
+
+    const normalizedQuery = query.toLowerCase().trim();
+
+    if (!normalizedQuery) {
+        return [];
     }
+
+    return historicalArchive.filter(entry => {
+
+        const searchableText = [
+
+            entry.title,
+            entry.category,
+            entry.period,
+            entry.location,
+            entry.introduction,
+            entry.overview,
+            entry.curiosity
+
+        ].join(" ").toLowerCase();
+
+        return searchableText.includes(normalizedQuery);
+
+    });
+
 }
+
+
+/* ---------- DISPLAY RESULTS ---------- */
+
+function displayResults(results, query) {
+
+    resultsSection.hidden = false;
+
+    resultsSection.innerHTML = "";
+
+    const heading = document.createElement("h3");
+
+    heading.className = "results-heading";
+
+    heading.textContent = "THE ARCHIVES";
+
+    resultsSection.appendChild(heading);
+
+
+    const description = document.createElement("p");
+
+    description.className = "results-description";
+
+    description.textContent = `Search results for "${query}"`;
+
+    resultsSection.appendChild(description);
+
+
+    if (results.length === 0) {
+
+        const emptyMessage = document.createElement("p");
+
+        emptyMessage.className = "empty-message";
+
+        emptyMessage.textContent =
+            "No entries were found in our current sample archive. Try another historical subject.";
+
+        resultsSection.appendChild(emptyMessage);
+
+        resultsSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        return;
+
+    }
+
+
+    const resultsGrid = document.createElement("div");
+
+    resultsGrid.className = "results-grid";
+
+
+    results.forEach(entry => {
+
+        const card = document.createElement("article");
+
+        card.className = "result-card";
+
+
+        const category = document.createElement("span");
+
+        category.className = "result-category";
+
+        category.textContent = entry.category;
+
+
+        const title = document.createElement("h4");
+
+        title.textContent = entry.title;
+
+
+        const period = document.createElement("p");
+
+        period.className = "result-period";
+
+        period.textContent = entry.period;
+
+
+        const location = document.createElement("p");
+
+        location.className = "result-location";
+
+        location.textContent = entry.location;
+
+
+        const introduction = document.createElement("p");
+
+        introduction.className = "result-introduction";
+
+        introduction.textContent = entry.introduction;
+
+
+        const readButton = document.createElement("button");
+
+        readButton.className = "read-entry-button";
+
+        readButton.textContent = "EXPLORE ENTRY";
+
+        readButton.addEventListener("click", () => {
+
+            displayFullEntry(entry);
+
+        });
+
+
+        card.append(
+            category,
+            title,
+            period,
+            location,
+            introduction,
+            readButton
+        );
+
+        resultsGrid.appendChild(card);
+
+    });
+
+
+    resultsSection.appendChild(resultsGrid);
+
+    resultsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* ---------- FULL HISTORICAL ENTRY ---------- */
+
+function displayFullEntry(entry) {
+
+    resultsSection.innerHTML = "";
+
+
+    const backButton = document.createElement("button");
+
+    backButton.className = "back-button";
+
+    backButton.textContent = "← BACK TO SEARCH RESULTS";
+
+    backButton.addEventListener("click", () => {
+
+        const query = searchInput.value.trim();
+
+        displayResults(searchHistory(query), query);
+
+    });
+
+
+    const article = document.createElement("article");
+
+    article.className = "full-entry";
+
+
+    const category = document.createElement("p");
+
+    category.className = "result-category";
+
+    category.textContent = entry.category;
+
+
+    const title = document.createElement("h2");
+
+    title.className = "entry-title";
+
+    title.textContent = entry.title;
+
+
+    const metadata = document.createElement("p");
+
+    metadata.className = "entry-metadata";
+
+    metadata.textContent = `${entry.period} | ${entry.location}`;
+
+
+    const introductionHeading = document.createElement("h3");
+
+    introductionHeading.textContent = "HISTORICAL OVERVIEW";
+
+
+    const introduction = document.createElement("p");
+
+    introduction.textContent = entry.introduction;
+
+
+    const overview = document.createElement("p");
+
+    overview.textContent = entry.overview;
+
+
+    const simplifiedBox = document.createElement("aside");
+
+    simplifiedBox.className = "simplified-box";
+
+    simplifiedBox.textContent = entry.simplified;
+
+
+    const curiosityHeading = document.createElement("h3");
+
+    curiosityHeading.textContent = "A LITTLE HISTORICAL CURIOSITY";
+
+
+    const curiosity = document.createElement("p");
+
+    curiosity.textContent = entry.curiosity;
+
+
+    const sourcesHeading = document.createElement("h3");
+
+    sourcesHeading.textContent = "FURTHER READING";
+
+
+    const sourceDescription = document.createElement("p");
+
+    sourceDescription.textContent =
+        "Explore this institution or reference collection for additional historical context. This is a starting point, not a complete scholarly bibliography.";
+
+
+    const sourceLink = document.createElement("a");
+
+    sourceLink.href = entry.sourceUrl;
+
+    sourceLink.target = "_blank";
+
+    sourceLink.rel = "noopener noreferrer";
+
+    sourceLink.textContent = entry.source;
+
+
+    const sourceNote = document.createElement("p");
+
+    sourceNote.className = "source-note";
+
+    sourceNote.textContent =
+        "Source classification: Reference or institutional resource. Check the linked material to determine whether it contains primary or secondary sources.";
+
+
+    article.append(
+        category,
+        title,
+        metadata,
+        introductionHeading,
+        introduction,
+        overview,
+        simplifiedBox,
+        curiosityHeading,
+        curiosity,
+        sourcesHeading,
+        sourceDescription,
+        sourceLink,
+        sourceNote
+    );
+
+
+    resultsSection.append(backButton, article);
+
+
+    resultsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+/* ---------- CONNECT SEARCH BAR ---------- */
+
+if (searchForm && searchInput) {
+
+    searchForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const query = searchInput.value.trim();
+
+        if (!query) {
+            return;
+        }
+
+        const results = searchHistory(query);
+
+        displayResults(results, query);
+
+    });
+
+}
+
+
+/* ---------- CONFIRMATION ---------- */
+
+console.log(
+    "FEATHER is ready. The historical archive has been loaded."
+);
